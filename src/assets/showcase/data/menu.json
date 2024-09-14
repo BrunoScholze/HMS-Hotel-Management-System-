@@ -1,0 +1,56 @@
+{
+    "data": [
+        {
+            "name": "Home",
+            "icon": "pi pi-home",
+            "routerLink": "/home"
+        },
+        {
+            "name": "Monitor",
+            "icon": "pi pi-desktop",
+            "routerLink": "/monitor"
+        },
+        {
+            "name": "Mapa",
+            "icon": "pi pi-map",
+            "routerLink": "/map"
+        },
+        {
+            "name": "Reservas",
+            "icon": "pi pi-calendar",
+            "routerLink": "/reservation"
+        },
+        {
+            "name": "Hóspedes",
+            "icon": "pi pi-user",
+            "routerLink": "/guest"
+        },
+        {
+            "name": "Day use",
+            "icon": "pi pi-sun",
+            "routerLink": "/dayUse"
+        },
+        {
+            "name": "Registrar",
+            "icon": "pi pi-plus-circle",
+            "children": [
+                {
+                    "name": "Hóspede",
+                    "routerLink": "/guestEdit"
+                },
+                {
+                    "name": "Reserva",
+                    "routerLink": "/reservation"
+                },
+                {
+                    "name": "Quartos",
+                    "routerLink": "/room"
+                },
+                {
+                    "name": "Categorias",
+                    "routerLink": "/category"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,146 @@
+<p-panel header="Novo Hóspedes">
+    <p-tabView>
+        <p-tabPanel header="Informações do hóspede">
+            <div class="pt-3">
+                <p-panel header="Dados Pessoais">
+                    <div class="pl-1">
+                        <div class="pb-5">Informe os dados pessoais do novo hóspede</div>
+                        <div class="grid formgrid p-fluid">
+                            <div class="field mb-4 col-6">
+                                <label for="fullName" class="font-medium text-900">Nome completo</label>
+                                <input id="fullName" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <label for="birthDate" class="font-medium text-900">Data de Nascimento</label>
+                                <p-calendar id="birthDate"></p-calendar>
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <label for="cpf" class="font-medium text-900">CPF</label>
+                                <input id="cpf" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <label for="gender" class="font-medium text-900">Sexo</label>
+                                <input id="gender" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <label for="passport" class="font-medium text-900">Passaporte</label>
+                                <input id="passport" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <div class="field mb-4 col-6">
+                                    <label for="ativoSwitch" class="pb-1 font-medium text-900 d-block col-12">Ativo</label>
+                                    <p-inputSwitch id="ativoSwitch"></p-inputSwitch>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </p-panel>
+            </div>
+            <div class="pt-3 pb-3">
+                <p-panel header="Contato" class="mt-3">
+                    <!-- Adicionei a classe mt-3 aqui para espaçamento -->
+                    <div class="pl-1">
+                        <div class="pb-5">Informe os dados para contato do novo hóspede</div>
+                        <div class="grid formgrid p-fluid">
+                            <div class="field mb-4 col-12">
+                                <label for="email" class="font-medium text-900">Email</label>
+                                <input id="email" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <label for="phonePrimary" class="font-medium text-900">Telefone principal</label>
+                                <input id="phonePrimary" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <label for="phoneSecondary" class="font-medium text-900">Telefone secundário</label>
+                                <input id="phoneSecondary" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                        </div>
+                    </div>
+                </p-panel>
+            </div>
+
+            <div>
+                <p-panel header="Endereço" class="mt-3">
+                    <!-- Adicionei a classe mt-3 aqui para espaçamento -->
+                    <div class="pl-1">
+                        <div class="pb-5">Informe os dados do endereço do novo hóspede</div>
+                        <div class="grid formgrid p-fluid">
+                            <div class="field mb-4 col-12">
+                                <label for="cep" class="font-medium text-900">CEP</label>
+                                <input id="cep" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <label for="country" class="font-medium text-900">País</label>
+                                <input id="country" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <label for="state" class="font-medium text-900">Estado</label>
+                                <input id="state" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <label for="city" class="font-medium text-900">Cidade</label>
+                                <input id="city" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <label for="neighborhood" class="font-medium text-900">Bairro</label>
+                                <input id="neighborhood" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <label for="street" class="font-medium text-900">Rua</label>
+                                <input id="street" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-6">
+                                <label for="number" class="font-medium text-900">Número</label>
+                                <input id="number" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                            <div class="field mb-4 col-12">
+                                <label for="complement" class="font-medium text-900">Complemento</label>
+                                <input id="complement" type="text" pInputText class="p-inputtext p-component p-element" />
+                            </div>
+                        </div>
+                    </div>
+                </p-panel>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Histórico do hóspede ">
+            <p-table #dt1 [value]="reservationHistoryList" [paginator]="true" [rows]="10" [tableStyle]="{ 'min-width': '50rem' }" [rowsPerPageOptions]="[5, 10, 20]" [globalFilterFields]="['number', 'guest', 'uh']">
+                <ng-template pTemplate="caption">
+                    <div class="flex">
+                        <p-button label="Clear" [outlined]="true" icon="pi pi-filter-slash" (onClick)="clear(dt1)" />
+                        <span class="p-input-icon-left ml-auto">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" [(ngModel)]="searchValue" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Procure por reserva" />
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 10%">Situação</th>
+                        <th style="width: 15%">N</th>
+                        <th style="width: 15%">UH</th>
+                        <th style="width: 15%">Check-In</th>
+                        <th style="width: 15%">Check-out</th>
+                        <th style="width: 15%">Numero de diarias</th>
+                        <th style="width: 15%">Quantidade</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-reservation>
+                    <tr>
+                        <td><p-tag value="{{getSituationLabel(reservation.situation)}}" severity="{{ getSituationTagColor(reservation.situation) }}" [rounded]="true" /></td>
+                        <td>{{ reservation.reservationId }}</td>
+                        <td>{{ reservation.uhName }}</td>
+                        <td>{{ reservation.initialDate }}</td>
+                        <td>{{ reservation.finaldate }}</td>
+                        <td>{{ reservation.dayNumbers }}</td>
+                        <td>{{ reservation.quantity }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </p-tabPanel>
+    </p-tabView>
+    <div class="flex justify-content-end flex-wrap">
+        <p-button class="pr-2" label="Cancelar" severity="secondary"  styleClass="w-full h-full" />
+        <p-button class="pr-3"  label="Salvar"  styleClass="w-full h-full" />
+
+</div>
+</p-panel>

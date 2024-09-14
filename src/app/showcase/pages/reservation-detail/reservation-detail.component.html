@@ -1,0 +1,75 @@
+<div class="flex">
+    <div class="col-12 lg:col-6 xl:col-8 p-0">
+        <p-panel header="{{pageTitle}}">
+            <div class="grid formgrid p-fluid pt-5">
+                <div class="field mb-4 col-12">
+                    <label for="nickname" class="font-medium text-900 mb-2">Nome completo</label>
+
+                    <div class="flex align-items-center">
+                        <p-multiSelect class="col-11 pl-0" [options]="cities" placeholder="Select Cities" optionLabel="name" display="chip" [showClear]="true" />
+                        <i class="pi pi-user-plus ml-2 clicable" style="color: #708090; cursor: pointer" (click)="onClickOpenNewGuestDialog()"></i>
+                    </div>
+                </div>
+
+                <div class="field mb-4 col-6">
+                    <label for="nickname" class="font-medium text-900">Data check-in</label>
+                    <p-calendar />
+                </div>
+                <div class="field mb-4 col-6">
+                    <label for="nickname" class="font-medium text-900">Data check-out</label>
+                    <p-calendar />
+                </div>
+
+                <div class="field mb-4 col-6">
+                    <label for="nickname" class="font-medium text-900">Número de hóspedes</label>
+                    <p-inputNumber inputId="integeronly" />
+                </div>
+                <div class="field mb-4 col-3">
+                    <label for="nickname" class="font-medium text-900">Quantidade adultos</label>
+                    <p-inputNumber inputId="integeronly" />
+                </div>
+                <div class="field mb-4 col-3">
+                    <label for="nickname" class="font-medium text-900">Quantidade crianças</label>
+                    <p-inputNumber inputId="integeronly" />
+                </div>
+
+                <div class="field mb-4 col-6">
+                    <label for="nickname" class="font-medium text-900">Valor diária</label>
+                    <p-inputNumber inputId="integeronly" />
+                </div>
+                <div class="field mb-4 col-6">
+                    <label for="nickname" class="font-medium text-900">Placa do Carro</label>
+                    <input id="nickname" type="text" pinputtext="" class="p-inputtext p-component p-element" />
+                </div>
+
+                <div class="field mb-4 col-12">
+                    <label for="nickname" class="font-medium text-900">Descrição</label>
+                    <input id="nickname" type="text" pinputtext="" class="p-inputtext p-component p-element" />
+                </div>
+            </div>
+            <div class="flex justify-content-end flex-wrap">
+                <p-splitButton *ngIf="!newReservationMode" [model]="addOptions" label="Emitir" icon="pi pi-print"  severity="info"  class="p-1"/>
+                <p-splitButton *ngIf="!newReservationMode"  class="p-1"  icon="pi pi-plus"  label="Adicionar" severity="success" [model]="addOptions"  />
+                <p-button class="p-1" label="Salvar" severity="primary" size="normal" />
+
+            </div>
+        </p-panel>
+    </div>
+
+    <div class="col-12 lg:col-6 xl:col-4 p-0 pl-3">
+        <div class="pb-3">
+            <p-panel header="U.H / Quarto">
+                <div class="flex align-items-center">
+                    <p-multiSelect class="col-11 pl-0" [options]="cities" placeholder="Selecione um U.H" optionLabel="name" display="chip" [showClear]="true" />
+                    <i class="pi pi-user-plus ml-2 clicable" style="color: #708090; cursor: pointer" (click)="onClickOpenNewGuestDialog()"></i>
+                </div>
+            </p-panel>
+        </div>
+
+        <p-panel header="Situação">
+            <div class="flex align-items-center">
+                <p-multiSelect class="col-11 pl-0" [options]="cities" placeholder="Selecione a situação da reserva" optionLabel="name" display="chip" [showClear]="true" />
+            </div>
+        </p-panel>
+    </div>
+</div>
