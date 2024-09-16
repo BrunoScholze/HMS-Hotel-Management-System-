@@ -16,9 +16,13 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { InputTextModule } from 'primeng/inputtext';
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { SplitButtonModule } from 'primeng/splitbutton';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
 
 @NgModule({
     imports: [CommonModule, 
+              FormsModule,
+              ReactiveFormsModule,
               UIKitRoutingModule, 
               HttpClientModule, 
               ButtonModule, 
@@ -32,6 +36,7 @@ import { SplitButtonModule } from 'primeng/splitbutton';
               InputNumberModule,
               ColorPickerModule,
               InputTextModule, 
+              CascadeSelectModule,
               SplitButtonModule,
               TableModule],
 

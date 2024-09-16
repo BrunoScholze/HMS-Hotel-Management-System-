@@ -43,8 +43,8 @@ export class GuestEditComponent {
                 situation: 'preBooked',
                 uhName: 'Quanrto 01',
                 reservationId: 'HO:000001',
-                initialDate: '16/01/2003',
-                finaldate: '30/01/2003',
+                checkIn: '16/01/2003',
+                checkOut: '30/01/2003',
                 dayNumbers: 2,
                 quantity: 2
             },
@@ -52,8 +52,8 @@ export class GuestEditComponent {
                 situation: 'booked',
                 uhName: 'Quanrto 01',
                 reservationId: 'HO:000001',
-                initialDate: '16/01/2003',
-                finaldate: '30/01/2003',
+                checkIn: '16/01/2003',
+                checkOut: '30/01/2003',
                 dayNumbers: 2,
                 quantity: 2
             },
@@ -61,8 +61,8 @@ export class GuestEditComponent {
                 situation: 'hosted',
                 uhName: 'Quanrto 01',
                 reservationId: 'HO:000001',
-                initialDate: '16/01/2003',
-                finaldate: '30/01/2003',
+                checkIn: '16/01/2003',
+                checkOut: '30/01/2003',
                 dayNumbers: 2,
                 quantity: 2
             },
@@ -70,8 +70,8 @@ export class GuestEditComponent {
                 situation: 'inCleaning',
                 uhName: 'Quanrto 01',
                 reservationId: 'HO:000001',
-                initialDate: '16/01/2003',
-                finaldate: '30/01/2003',
+                checkIn: '16/01/2003',
+                checkOut: '30/01/2003',
                 dayNumbers: 2,
                 quantity: 2
             },
@@ -79,8 +79,8 @@ export class GuestEditComponent {
                 situation: 'finalized',
                 uhName: 'Quanrto 01',
                 reservationId: 'HO:000001',
-                initialDate: '16/01/2003',
-                finaldate: '30/01/2003',
+                checkIn: '16/01/2003',
+                checkOut: '30/01/2003',
                 dayNumbers: 2,
                 quantity: 2
             }

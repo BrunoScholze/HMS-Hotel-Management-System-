@@ -1,4 +1,4 @@
-<p-panel header="Liste de Reservas">
+<p-panel header="Lista de Reservas">
     <p-toolbar styleClass="mb-4 gap-2">
         <ng-template pTemplate="left">
             <p-button label="Nova reserva" icon="pi pi-plus" class="mr-2" (onClick)="goToNewReservationDetail()" />
@@ -32,7 +32,7 @@
         </ng-template>
         <ng-template pTemplate="body" let-reservation>
             <tr>
-                <td><p-colorPicker class="pr-1" [(ngModel)]="color" [disabled]="true" inputId="cp-hex" /> <span class="clickableLink" (click)="goToReservationDetail()">{{ reservation.number }}</span> </td>
+                <td><p-colorPicker class="pr-1" [(ngModel)]="color" [disabled]="true" inputId="cp-hex" /> <span class="clickableLink" (click)="goToReservationDetail(reservation)">{{ reservation.number }}</span> </td>
                 <td>{{ reservation.guest }}</td>
                 <td>{{ reservation.uh }}</td>
                 <td>{{ reservation.checkIn }}</td>
