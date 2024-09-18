@@ -43,7 +43,7 @@ export class ReservationDetailComponent {
     public route: ActivatedRoute,
     private router: Router
   ) {
-    this.titleService.setTitle("UI Kit - PrimeNG");
+    this.titleService.setTitle("RoomWise");
     this.metaService.updateTag({
       name: "description",
       content: "PrimeNG Angular UI Kit",
@@ -117,13 +117,27 @@ export class ReservationDetailComponent {
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
       this.reservation = JSON.parse(params["reservation"]);
-      console.log(this.reservation);
+      console.log(this.reservation)
     });
 
     this.route.paramMap.subscribe((params) => {
       const id = params.get("id");
       if (id === "newReservation") {
         this.newReservationMode = true;
+        
+        this.reservation = {
+          quantity: 0,
+          guest: '',
+          checkIn: null,
+          checkOut: null,
+          adults: 0,
+          children: 0,
+          dailyRate: null,
+          carPlate: '',
+          uh: '',
+          situation: ''
+        };
+
       } else {
         this.newReservationMode = false;
       }

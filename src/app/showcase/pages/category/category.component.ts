@@ -173,7 +173,7 @@ export class CategoryComponent {
     getSeverity(status: boolean) {
         switch (status) {
             case true:
-                return 'success';
+                return 'info';
 
             case false:
                 return 'danger';

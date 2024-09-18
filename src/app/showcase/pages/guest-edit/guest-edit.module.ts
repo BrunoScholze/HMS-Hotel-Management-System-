@@ -16,9 +16,12 @@ import { SplitButtonModule } from 'primeng/splitbutton';
 import { GuestEditComponent } from './guest-edit.component';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { TabViewModule } from 'primeng/tabview';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [CommonModule, 
+              FormsModule,
+              ReactiveFormsModule,
               UIKitRoutingModule, 
               HttpClientModule, 
               ToolbarModule, 

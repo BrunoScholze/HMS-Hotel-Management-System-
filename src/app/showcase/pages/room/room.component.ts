@@ -173,7 +173,7 @@ export class RoomComponent {
     getSeverity(status: boolean) {
         switch (status) {
             case true:
-                return 'success';
+                return 'info';
 
             case false:
                 return 'danger';

@@ -32,7 +32,7 @@ export class ReservationComponent {
                 public dialogService: DialogService,
                 private router: Router
     ) {
-        this.titleService.setTitle('UI Kit - PrimeNG');
+        this.titleService.setTitle('RoomWise');
         this.metaService.updateTag({ name: 'description', content: 'PrimeNG Angular UI Kit' });
 
         this.cities = [
@@ -332,7 +332,6 @@ export class ReservationComponent {
         this.router.navigate(['/reservationDetail', 'detailReservation'],{
             queryParams: { reservation: JSON.stringify(reservation) }
         });
-
     }
 
     goToNewReservationDetail(){

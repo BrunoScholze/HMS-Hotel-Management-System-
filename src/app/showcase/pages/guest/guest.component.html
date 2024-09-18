@@ -31,9 +31,9 @@
         </ng-template>
         <ng-template pTemplate="body" let-guest>
             <tr>
-                <td><p-tag [value]="getStatuslabel(guest.status)" [severity]="getSeverity(guest.status)" /></td>
+                <td><p-tag [value]="getStatuslabel(guest.active)" [severity]="getSeverity(guest.active)" /></td>
                 <td style="width: 5%">
-                    <span class="clickableLink" (click)="navigateToGuestEdit()">{{ guest.name }}</span>
+                    <span class="clickableLink" (click)="navigateToGuestEdit(guest)">{{ guest.name }}</span>
                 </td>
                 <td>{{ guest.email }}</td>
                 <td>{{ guest.fone }}</td>

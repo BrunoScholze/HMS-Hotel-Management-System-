@@ -15,7 +15,7 @@ export const routes: Routes = [
             { path: 'dayUse', loadChildren: () => import('@pages/day-use/day-use.module').then((m) => m.DayUseModule) },
             { path: 'category', loadChildren: () => import('@pages/category/category.module').then((m) => m.CategoryModule) },
             { path: 'dynamicdialog', loadChildren: () => import('@pages/dynamicdialog/dynamicdialogdemo.module').then((m) => m.DynamicDialogDemoModule) },
-            { path: 'guestEdit', loadChildren: () => import('@pages/guest-edit/guest-edit.module').then((m) => m.GuestEditModule) },
+            { path: 'guestEdit/:id', loadChildren: () => import('@pages/guest-edit/guest-edit.module').then((m) => m.GuestEditModule) },
             {path: 'reservationDetail/:id',  loadChildren: () => import('@pages/reservation-detail/reservation-detail.module').then((m) => m.ReservationDetailModule) },
         ]
     },
