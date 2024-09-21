@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { RoomRoutingModule } from './room-routing.module';
-import { RoomComponent } from './room.component';
 import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { DialogModule } from 'primeng/dialog';
@@ -14,22 +12,30 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { TagModule } from 'primeng/tag';
+import { RoomFormRoutingModule } from './room-form.routing.module';
+import { RoomFormComponent } from './room-form.component';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { ChipsModule } from 'primeng/chips';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [CommonModule,
-              RoomRoutingModule,
+              RoomFormRoutingModule,
               HttpClientModule,
               ButtonModule,
               PanelModule,
+              FormsModule,
               DialogModule,
+              ChipsModule,
               StepperModule,
               FloatLabelModule,
               CalendarModule,
               MultiSelectModule,
               InputTextModule,
+              InputSwitchModule,
               TagModule,
               InputNumberModule,TableModule],
 
-    declarations: [RoomComponent]
+    declarations: [RoomFormComponent]
 })
-export class RoomModule {}
+export class RoomFormModule {}

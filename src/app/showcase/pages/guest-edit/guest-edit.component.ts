@@ -99,15 +99,8 @@ export class GuestEditComponent {
       if (params["guest"]) {
         this.guest = JSON.parse(params["guest"]);
         console.log(this.guest);
-      }
-    });
-
-    this.route.paramMap.subscribe((params) => {
-      const id = params.get("id");
-      if (id === "detailGuest") {
-        this.newGuestMode = true;
-
-        (this.guest = {
+      } else {
+        this.guest = {
           name: "",
           birthDate: "",
           cpf: "",
@@ -125,10 +118,16 @@ export class GuestEditComponent {
           number: "",
           complement: "",
           active: true,
-        }),
-          console.log("sds");
-      } else {
+        };
+      }
+    });
+
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get("id");
+      if (id === "detailGuest") {
         this.newGuestMode = false;
+      } else {
+        this.newGuestMode = true;
       }
     });
 

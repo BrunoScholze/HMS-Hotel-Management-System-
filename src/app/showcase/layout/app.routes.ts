@@ -11,6 +11,8 @@ export const routes: Routes = [
             { path: 'map', loadChildren: () => import('@pages/map/map.module').then((m) => m.MaptModule) },
             { path: 'reservation', loadChildren: () => import('@pages/reservation/reservation.module').then((m) => m.ReservationModule) },
             { path: 'room', loadChildren: () => import('@pages/room/room.module').then((m) => m.RoomModule) },
+            { path: 'roomForm', loadChildren: () => import('@pages/room-form/room-form.module').then((m) => m.RoomFormModule) },
+            { path: 'room', loadChildren: () => import('@pages/room/room.module').then((m) => m.RoomModule) },
             { path: 'guest', loadChildren: () => import('@pages/guest/guest.module').then((m) => m.GuestModule) },
             { path: 'dayUse', loadChildren: () => import('@pages/day-use/day-use.module').then((m) => m.DayUseModule) },
             { path: 'category', loadChildren: () => import('@pages/category/category.module').then((m) => m.CategoryModule) },

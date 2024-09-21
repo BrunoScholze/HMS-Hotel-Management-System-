@@ -190,7 +190,7 @@ export class CategoryComponent {
         }
     }
 
-   show() {
+    show() {
         this.ref = this.dialogService.open(NewCategory, {
             header: 'Select a Product',
             width: '50vw',
