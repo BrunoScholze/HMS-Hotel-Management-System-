@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { AppConfigService } from '@service/appconfigservice';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { NewCategory } from '@doc/dynamicdialog/new-category';
+import { Category } from '@layout/models/category.model';
 
 interface City {
     name: string,
@@ -19,8 +20,8 @@ export class CategoryComponent {
     visible: boolean = false;
     subscription: Subscription;
     ref: DynamicDialogRef | undefined;
-    category :Array<any>;
-    selectedCategory: any;
+    category :Array<Category>;
+    selectedCategory: Category;
 
     constructor(private configService: AppConfigService, private titleService: Title, private metaService: Meta, public dialogService: DialogService) {
         this.titleService.setTitle('Categorias - RoomWise');

@@ -190,4 +190,21 @@ export class ReservationDetailComponent {
   goToNewRoom() {
     this.router.navigate(["/room"]);
   }
+
+  getReservationLabelStatus(situation: string) {
+    if (situation == "preBooked") {
+      return "Pré-Reservado";
+    } else if (situation == "booked") {
+      return "Reservado";
+    } else if (situation == "busy") {
+      return "Ocupado";
+    } else if (situation == "inCleaning") {
+      return "Em limpeza";
+    } else if (situation == "available") {
+      return "Disponível";
+    } else if (situation == "blocked") {
+      return "Bloqueado";
+    }
+  }
+  
 }

@@ -4,6 +4,7 @@ import { Subscription } from "rxjs";
 import { AppConfigService } from "@service/appconfigservice";
 import { DialogService, DynamicDialogRef } from "primeng/dynamicdialog";
 import { Router } from "@angular/router";
+import { Room } from "@layout/models/room.model";
 
 interface City {
   name: string;
@@ -21,7 +22,7 @@ export class RoomComponent {
   cities!: City[];
   ref: DynamicDialogRef | undefined;
   selectedCities!: City[];
-  room: Array<any>;
+  room: Array<Room>;
 
   constructor(
     private configService: AppConfigService,

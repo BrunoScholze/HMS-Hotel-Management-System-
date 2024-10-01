@@ -7,6 +7,7 @@ import { CustomerService } from "@service/customerservice";
 import { Table } from "primeng/table";
 import { DialogService, DynamicDialogRef } from "primeng/dynamicdialog";
 import { Router } from "@angular/router";
+import { Guest } from "@layout/models/guest.model";
 
 @Component({
   templateUrl: "./guest.component.html",
@@ -18,7 +19,7 @@ export class GuestComponent {
   visible: boolean = false;
   subscription: Subscription;
   customers!: Customer[];
-  guests!: Array<any>;
+  guests!: Array<Guest>;
   searchValue: string | undefined;
 
   constructor(

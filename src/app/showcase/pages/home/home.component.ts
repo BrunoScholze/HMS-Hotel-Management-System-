@@ -6,6 +6,7 @@ import { DialogService, DynamicDialogRef } from "primeng/dynamicdialog";
 import { ProductListDemo } from "@doc/dynamicdialog/productlistdemo";
 import { NewReservation } from "@doc/dynamicdialog/new-reservation";
 import { Router } from "@angular/router";
+import { Reservation } from "@layout/models/reservation.model";
 
 @Component({
   templateUrl: "./home.component.html",
@@ -16,15 +17,15 @@ export class HomeComponent {
   ref: DynamicDialogRef | undefined;
   subscription: Subscription;
   values: string[] | undefined;
-  reservationList: Array<any>;
+  reservationList: Array<Reservation>;
 
   constructor(
     private configService: AppConfigService,
     private titleService: Title,
-    private metaService: Meta,
     public dialogService: DialogService,
     private router: Router
   ) {
+
     this.titleService.setTitle("RoomWise");
 
     this.reservationList = [
@@ -239,7 +240,7 @@ export class HomeComponent {
 
   show() {
     this.ref = this.dialogService.open(NewReservation, {
-      header: "Select a Product",
+      header: "Nova reserva",
       width: "50vw",
       contentStyle: { overflow: "auto" },
       breakpoints: {
