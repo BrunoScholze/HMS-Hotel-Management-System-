@@ -18,160 +18,150 @@ interface City {
 export class CategoryComponent {
     visible: boolean = false;
     subscription: Subscription;
-    cities!: City[];
     ref: DynamicDialogRef | undefined;
-    selectedCities!: City[];
     category :Array<any>;
+    selectedCategory: any;
 
     constructor(private configService: AppConfigService, private titleService: Title, private metaService: Meta, public dialogService: DialogService) {
         this.titleService.setTitle('Categorias - RoomWise');
         this.metaService.updateTag({ name: 'description', content: 'PrimeNG Angular UI Kit' });
 
-        this.cities = [
-            {name: 'New York', code: 'NY'},
-            {name: 'Rome', code: 'RM'},
-            {name: 'London', code: 'LDN'},
-            {name: 'Istanbul', code: 'IST'},
-            {name: 'Paris', code: 'PRS'}
-        ];
-
         this.category = [
             {
                 id: 1,
-                name: 'Beira mar',
-                description: 'Quartos beira mar',
-                status: true
+                name: 'Luxo',
+                description: 'Quartos com comodidades de alto padrão e serviços exclusivos',
+                active: true
             },
             {
                 id: 2,
-                name: 'Suíte Executiva',
-                description: 'Quartos de alto padrão com vista panorâmica',
-                status: true
+                name: 'Executivo',
+                description: 'Quartos voltados para profissionais com foco em trabalho e conforto',
+                active: true
             },
             {
                 id: 3,
-                name: 'Quarto Standard',
-                description: 'Quartos simples e econômicos',
-                status: true
+                name: 'Econômico',
+                description: 'Quartos simples e acessíveis para estadias curtas',
+                active: true
             },
             {
                 id: 4,
-                name: 'Quarto Luxo',
-                description: 'Quartos luxuosos com comodidades premium',
-                status: true
+                name: 'Familiar',
+                description: 'Quartos espaçosos, ideais para famílias',
+                active: true
             },
             {
                 id: 5,
                 name: 'Suíte Presidencial',
-                description: 'Suítes de luxo para clientes VIP',
-                status: true
+                description: 'Suítes luxuosas e exclusivas para clientes VIP',
+                active: true
             },
             {
                 id: 6,
-                name: 'Chalé Familiar',
-                description: 'Acomodações espaçosas para famílias',
-                status: true
+                name: 'Romântico',
+                description: 'Quartos decorados para casais, ideal para lua de mel',
+                active: true
             },
             {
                 id: 7,
-                name: 'Quarto Econômico',
-                description: 'Quartos acessíveis para estadias rápidas',
-                status: true
+                name: 'Pet Friendly',
+                description: 'Quartos que permitem a estadia de animais de estimação',
+                active: true
             },
             {
                 id: 8,
-                name: 'Suíte com Varanda',
-                description: 'Suítes com varanda e vista para o jardim',
-                status: true
+                name: 'Com Vista para o Mar',
+                description: 'Quartos com janelas ou varandas com vista para o oceano',
+                active: true
             },
             {
                 id: 9,
-                name: 'Quarto para Deficientes',
-                description: 'Quartos adaptados para pessoas com necessidades especiais',
-                status: true
+                name: 'Acessível',
+                description: 'Quartos adaptados para hóspedes com necessidades especiais',
+                active: true
             },
             {
                 id: 10,
-                name: 'Suíte Nupcial',
-                description: 'Suítes românticas para casais em lua de mel',
-                status: true
+                name: 'Suíte com Jacuzzi',
+                description: 'Quartos equipados com banheira de hidromassagem privada',
+                active: true
             },
             {
                 id: 11,
-                name: 'Apartamento Executivo',
-                description: 'Apartamentos modernos para estadias longas',
-                status: true
+                name: 'Conjugado',
+                description: 'Quartos interligados para famílias ou grupos maiores',
+                active: true
             },
             {
                 id: 12,
-                name: 'Quarto Superior',
-                description: 'Quartos confortáveis com serviços adicionais',
-                status: true
+                name: 'Com Vista para a Montanha',
+                description: 'Quartos com vista panorâmica para as montanhas',
+                active: true
             },
             {
                 id: 13,
-                name: 'Vila Privativa',
-                description: 'Vilas isoladas com piscina privada',
-                status: true
+                name: 'Quarto Temático',
+                description: 'Quartos decorados com temas exclusivos e criativos',
+                active: true
             },
             {
                 id: 14,
-                name: 'Loft Moderno',
-                description: 'Lofts com design contemporâneo',
-                status: true
+                name: 'Loft',
+                description: 'Quartos com design moderno e conceito aberto',
+                active: true
             },
             {
                 id: 15,
-                name: 'Quarto com Vista para a Montanha',
-                description: 'Quartos com vista deslumbrante para a montanha',
-                status: true
+                name: 'Chalé',
+                description: 'Acomodações em estilo chalé para uma experiência mais privativa',
+                active: true
             },
             {
                 id: 16,
-                name: 'Suíte com Jacuzzi',
-                description: 'Suítes equipadas com jacuzzi privada',
-                status: true
+                name: 'Com Varanda',
+                description: 'Quartos com varanda para maior comodidade',
+                active: true
             },
             {
                 id: 17,
-                name: 'Quarto Pet Friendly',
-                description: 'Quartos que permitem animais de estimação',
-                status: true
+                name: 'Twin',
+                description: 'Quartos com duas camas de solteiro, ideal para amigos ou colegas',
+                active: true
             },
             {
                 id: 18,
-                name: 'Suíte Temática',
-                description: 'Suítes decoradas com temas especiais',
-                status: true
+                name: 'Studio',
+                description: 'Quartos compactos com cozinha integrada para estadias prolongadas',
+                active: true
             },
             {
                 id: 19,
-                name: 'Quarto Twin',
-                description: 'Quartos com duas camas de solteiro',
-                status: true
+                name: 'Piso Superior',
+                description: 'Quartos localizados nos andares mais altos do hotel',
+                active: true
             },
             {
                 id: 20,
-                name: 'Quarto Conjugado',
-                description: 'Quartos interligados para famílias ou grupos',
-                status: true
+                name: 'Quarto Deluxe',
+                description: 'Quartos espaçosos com serviços adicionais',
+                active: true
             },
             {
                 id: 21,
-                name: 'Quarto com Banheira',
-                description: 'Quartos equipados com banheiras de luxo',
-                status: true
+                name: 'Vila Privativa',
+                description: 'Vilas exclusivas com piscina privada e comodidades de luxo',
+                active: true
             }
         ];
-
     }
 
     get isDarkMode(): boolean {
         return this.configService.config().darkMode;
     }
 
-    getSeverity(status: boolean) {
-        switch (status) {
+    getSeverity(active: boolean) {
+        switch (active) {
             case true:
                 return 'info';
 
@@ -180,8 +170,8 @@ export class CategoryComponent {
         }
     }
 
-    getValue(status: boolean) {
-        switch(status) {
+    getValue(active: boolean) {
+        switch(active) {
             case true:
                 return 'Ativo'
 
@@ -190,7 +180,7 @@ export class CategoryComponent {
         }
     }
 
-    show() {
+    show(category) {
         this.ref = this.dialogService.open(NewCategory, {
             header: 'Select a Product',
             width: '50vw',
@@ -199,9 +189,7 @@ export class CategoryComponent {
                 '960px': '75vw',
                 '640px': '90vw'
             },
-            templates: {
-              //  footer: Footer
-            }
+            data: { category: category }
         });
 
         this.ref.onClose.subscribe((data: any) => {
@@ -212,11 +200,9 @@ export class CategoryComponent {
             } else {
                 summary_and_detail = { summary: 'No Product Selected', detail: 'Pressed Close button' };
             }
-            //this.messageService.add({ severity: 'info', ...summary_and_detail, life: 3000 });
         });
 
         this.ref.onMaximize.subscribe((value) => {
-           // this.messageService.add({ severity: 'info', summary: 'Maximized', detail: `maximized: ${value.maximized}` });
         });
     }
 }

@@ -31,7 +31,8 @@ export class GuestEditComponent {
     private metaService: Meta,
     private customerService: CustomerService,
     public dialogService: DialogService,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    private router: Router
   ) {
     this.titleService.setTitle("RoomWise");
     this.metaService.updateTag({
@@ -187,4 +188,9 @@ export class GuestEditComponent {
       return "success";
     }
   }
+
+  navigateToGuestList() {
+    this.router.navigate(["/guest"]);
+  }
+
 }

@@ -39,13 +39,17 @@
             >Data check-in</label
           >
 
-          <p-calendar [placeholder]="!newReservationMode ? reservation.checkIn : ''" />
+          <p-calendar
+            [placeholder]="!newReservationMode ? reservation.checkIn : ''"
+          />
         </div>
         <div class="field mb-4 col-6">
           <label for="nickname" class="font-medium text-900"
             >Data check-out</label
           >
-          <p-calendar [placeholder]="!newReservationMode ? reservation.checkOut : ''"/>
+          <p-calendar
+            [placeholder]="!newReservationMode ? reservation.checkOut : ''"
+          />
         </div>
 
         <div class="field mb-4 col-6">
@@ -150,15 +154,26 @@
       </p-panel>
     </div>
 
-    <p-panel header="Situação">
-      <div class="flex align-items-center">
-        <input
-          id="nickname"
-          type="text"
-          [(ngModel)]="reservation.situation"
-          pinputtext=""
-          class="p-inputtext p-component p-element"
-        />
+    <div class="pb-3">
+      <p-panel header="Situação">
+        <div class="flex align-items-center">
+          <input
+            id="nickname"
+            type="text"
+            [(ngModel)]="reservation.situation"
+            pinputtext=""
+            class="p-inputtext p-component p-element"
+          />
+        </div>
+      </p-panel>
+    </div>
+
+    <p-panel header="Serviços adicionais">
+      <div
+        *ngFor="let field of reservation.additionalServices"
+        class="borderContainer mb-2"
+      >
+        <h4 class="m-0">{{ field }}</h4>
       </div>
     </p-panel>
   </div>

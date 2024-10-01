@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
-import { UIKitRoutingModule } from "./day-use-routing.module";
-import { DayUseComponent } from "./day-use.component";
+import { UIKitRoutingModule } from "./day-use-form-routing.module";
+import { DayUseFormComponent } from "./day-use-form.component";
 import { InputTextModule } from "primeng/inputtext";
 import { SplitButtonModule } from "primeng/splitbutton";
 import { TagModule } from "primeng/tag";
@@ -14,6 +14,8 @@ import { DialogModule } from "primeng/dialog";
 import { PanelModule } from "primeng/panel";
 import { ButtonModule } from "primeng/button";
 import { ToolbarModule } from "primeng/toolbar";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { InputNumberModule } from "primeng/inputnumber";
 
 @NgModule({
   imports: [
@@ -21,6 +23,8 @@ import { ToolbarModule } from "primeng/toolbar";
     UIKitRoutingModule,
     HttpClientModule,
     DialogModule,
+    FormsModule,
+    ReactiveFormsModule,
     StepperModule,
     FloatLabelModule,
     CalendarModule,
@@ -30,9 +34,10 @@ import { ToolbarModule } from "primeng/toolbar";
     SplitButtonModule,
     ToolbarModule,
     ButtonModule,
+    InputNumberModule,
     InputTextModule,
   ],
 
-  declarations: [DayUseComponent],
+  declarations: [DayUseFormComponent],
 })
-export class DayUseModule {}
+export class DayUseFormModule {}

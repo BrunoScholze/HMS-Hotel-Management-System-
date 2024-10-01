@@ -9,5 +9,50 @@
 
 .clickableLink{
   color: #295bac;
+  font-weight: 500;
   cursor: pointer;
+}
+
+.font-label-title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.font-value-title {
+  font-size: 18px;
+}
+
+.yellow-color {
+  color: #e8bf56;
+}
+
+.blue-color {
+  color: #42aac2;
+}
+
+.grey-color {
+  color: #959595;
+}
+
+.green-color {
+  color: #55c99f;
+}
+
+.red-color {
+  color: #e46262;
+}
+
+.purple-color {
+  color: #897CDC;
+}
+
+.max-height-100{
+  max-height: 10px;
+}
+
+.borderContainer{
+  border: 1px solid rgb(200, 200, 200);
+  border-left: 5px solid #3B82F6;
+  border-radius: 5px;
+  padding: 14px;
 }

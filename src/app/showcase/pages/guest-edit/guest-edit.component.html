@@ -282,10 +282,11 @@
   <div class="flex justify-content-end flex-wrap">
     <p-button
       class="pr-2"
+      (onClick)="navigateToGuestList()"
       label="Cancelar"
       severity="secondary"
       styleClass="w-full h-full"
     />
-    <p-button class="pr-3" label="Salvar" styleClass="w-full h-full" />
+    <p-button class="pr-3" label="Salvar" styleClass="w-full h-full" (onClick)="navigateToGuestList()"/>
   </div>
 </p-panel>

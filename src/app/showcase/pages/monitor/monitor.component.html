@@ -1,0 +1,55 @@
+<p-card header="Ocupação">
+  <div class="m-0 flex flex-wrap">
+    <div
+      class="col-12 sm:col-5 flex align-items-center justify-content-center"
+      style="min-height: 100%"
+    >
+      <div class="flex flex-wrap w-full">
+        <div
+          *ngFor="let fields of ocupationMonitorData"
+          class="col-12 sm:col-6 flex flex-column align-items-center justify-content-center pb-5"
+        >
+          <span class="font-label-title {{ fields.class }}">
+            <i class="pr-1 {{ fields.icon }}"></i>{{ fields.label }}
+          </span>
+          <span class="pt-1 font-value-title">{{ fields.value }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 sm:col-7">
+      <p-chart type="line" [data]="data" [options]="options" />
+    </div>
+  </div>
+</p-card>
+
+<div class="pt-3"></div>
+
+<p-card header="Reservas">
+  <p-chart type="bar" [data]="dataReservation" [options]="optionsReservation" />
+</p-card>
+
+<div class="pt-3"></div>
+
+<div class="m-0 flex flex-wrap">
+  <div class="col-12 sm:col-6 p-0 pr-2">
+    <p-card header="Produtos vendidos">
+      <p-chart
+        type="doughnut"
+        [data]="dataProduct"
+        [options]="optionsProduct"
+        style="max-height: 100px"
+      />
+    </p-card>
+  </div>
+
+  <div class="col-12 sm:col-6 p-0 pr-2">
+    <p-card header="Serviços vendidos">
+      <p-chart
+        type="doughnut"
+        [data]="dataServices"
+        [options]="optionsServices"
+        style="max-height: 100px"
+      />
+    </p-card>
+  </div>
+</div>
