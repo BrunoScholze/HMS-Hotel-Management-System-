@@ -8,6 +8,7 @@ import { NewGuest } from "@doc/dynamicdialog/new-guest";
 import { MenuItem } from "primeng/api";
 import { Router } from "@angular/router";
 import { ActivatedRoute } from "@angular/router";
+import { Reservation } from "@layout/models/reservation.model";
 
 interface City {
   name: string;
@@ -15,11 +16,11 @@ interface City {
 }
 
 @Component({
-  templateUrl: "./reservation-detail.component.html",
+  templateUrl: "./reservation-form.component.html",
   providers: [DialogService],
-  styleUrls: ["reservation-detail.component.scss"],
+  styleUrls: ["reservation-form.component.scss"],
 })
-export class ReservationDetailComponent {
+export class ReservationFormComponent {
   visible: boolean = false;
   subscription: Subscription;
   cities!: City[];
@@ -122,21 +123,11 @@ export class ReservationDetailComponent {
 
     this.route.paramMap.subscribe((params) => {
       const id = params.get("id");
+
       if (id === "newReservation") {
         this.newReservationMode = true;
 
-        this.reservation = {
-          quantity: 0,
-          guest: "",
-          checkIn: null,
-          checkOut: null,
-          adults: 0,
-          children: 0,
-          dailyRate: null,
-          carPlate: "",
-          uh: "",
-          situation: "",
-        };
+        this.reservation = new Reservation;
       } else {
         this.newReservationMode = false;
       }

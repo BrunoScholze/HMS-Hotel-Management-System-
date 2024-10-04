@@ -11,11 +11,11 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Guest } from "@layout/models/guest.model";
 
 @Component({
-  templateUrl: "./guest-edit.component.html",
+  templateUrl: "./guest-form.component.html",
   providers: [DialogService],
-  styleUrls: ["guest-edit.component.scss"],
+  styleUrls: ["guest-form.component.scss"],
 })
-export class GuestEditComponent {
+export class GuestFormComponent {
   ref: DynamicDialogRef | undefined;
   visible: boolean = false;
   subscription: Subscription;
@@ -97,25 +97,7 @@ export class GuestEditComponent {
         this.guest = JSON.parse(params["guest"]);
         console.log(this.guest);
       } else {
-        this.guest = {
-          name: "",
-          birthDate: "",
-          cpf: "",
-          gender: "",
-          passport: "",
-          email: "",
-          fone: "",
-          fone2: "",
-          cep: "",
-          contry: "",
-          state: "",
-          city: "",
-          neighborhood: "",
-          streat: "",
-          number: "",
-          complement: "",
-          active: true,
-        };
+        this.guest = new Guest;
       }
     });
 

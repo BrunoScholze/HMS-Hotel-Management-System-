@@ -4,6 +4,7 @@ import { Subscription } from "rxjs";
 import { AppConfigService } from "@service/appconfigservice";
 import { DialogService, DynamicDialogRef } from "primeng/dynamicdialog";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Room } from "@layout/models/room.model";
 
 interface City {
   name: string;
@@ -54,13 +55,7 @@ export class RoomFormComponent {
       } else {
         this.pageTitle = "Novo Quarto";
 
-        this.room = {
-          id: 0,
-          name: "",
-          capacity: 0,
-          description: "",
-          active: true,
-        };
+        this.room = new Room;
       }
     });
   }

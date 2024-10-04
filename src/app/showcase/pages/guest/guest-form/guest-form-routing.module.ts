@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { GuestEditComponent } from './guest-edit.component';
+import { GuestFormComponent } from './guest-form.component';
 
 @NgModule({
-    imports: [RouterModule.forChild([{ path: '', component: GuestEditComponent }])],
+    imports: [RouterModule.forChild([{ path: '', component: GuestFormComponent }])],
     exports: [RouterModule]
 })
 export class UIKitRoutingModule {}

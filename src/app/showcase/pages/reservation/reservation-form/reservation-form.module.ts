@@ -1,22 +1,23 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { UIKitRoutingModule } from './guest-edit-routing.module';
-import { ToolbarModule } from 'primeng/toolbar';
+import { UIKitRoutingModule } from './reservation-form-routing.module';
+import { ReservationFormComponent } from './reservation-form.component';
 import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { DialogModule } from 'primeng/dialog';
 import { StepperModule } from 'primeng/stepper';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { CalendarModule } from 'primeng/calendar';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { InputNumberModule } from 'primeng/inputnumber';
 import { TableModule } from 'primeng/table';
+import { ToolbarModule } from 'primeng/toolbar';
 import { InputTextModule } from 'primeng/inputtext';
-import { TagModule } from 'primeng/tag';
+import { ColorPickerModule } from 'primeng/colorpicker';
 import { SplitButtonModule } from 'primeng/splitbutton';
-import { GuestEditComponent } from './guest-edit.component';
-import { InputSwitchModule } from 'primeng/inputswitch';
-import { TabViewModule } from 'primeng/tabview';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
 
 @NgModule({
     imports: [CommonModule, 
@@ -24,20 +25,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
               ReactiveFormsModule,
               UIKitRoutingModule, 
               HttpClientModule, 
-              ToolbarModule, 
               ButtonModule, 
+              ToolbarModule ,
               PanelModule, 
               DialogModule, 
               StepperModule, 
-              FloatLabelModule, 
+              FloatLabelModule,
               CalendarModule, 
-              TableModule,
-              TagModule,
+              MultiSelectModule, 
+              InputNumberModule,
+              ColorPickerModule,
+              InputTextModule, 
+              CascadeSelectModule,
               SplitButtonModule,
-              InputSwitchModule,
-              TabViewModule,
-              InputTextModule],
+              TableModule],
 
-    declarations: [GuestEditComponent]
+    declarations: [ReservationFormComponent]
 })
-export class GuestEditModule {}
+export class ReservationDetailModule {}
