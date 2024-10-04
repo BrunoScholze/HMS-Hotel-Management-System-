@@ -6,7 +6,7 @@ import { NewReservation } from "@doc/dynamicdialog/new-reservation";
 import { DialogService, DynamicDialogRef } from "primeng/dynamicdialog";
 import { NewGuest } from "@doc/dynamicdialog/new-guest";
 import { MenuItem } from "primeng/api";
-import { Router } from '@angular/router'; 
+import { Router } from "@angular/router";
 import { ActivatedRoute } from "@angular/router";
 
 interface City {
@@ -117,27 +117,26 @@ export class ReservationDetailComponent {
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
       this.reservation = JSON.parse(params["reservation"]);
-      console.log(this.reservation)
+      console.log(this.reservation);
     });
 
     this.route.paramMap.subscribe((params) => {
       const id = params.get("id");
       if (id === "newReservation") {
         this.newReservationMode = true;
-        
+
         this.reservation = {
           quantity: 0,
-          guest: '',
+          guest: "",
           checkIn: null,
           checkOut: null,
           adults: 0,
           children: 0,
           dailyRate: null,
-          carPlate: '',
-          uh: '',
-          situation: ''
+          carPlate: "",
+          uh: "",
+          situation: "",
         };
-
       } else {
         this.newReservationMode = false;
       }
@@ -149,46 +148,12 @@ export class ReservationDetailComponent {
     return this.configService.config().darkMode;
   }
 
-  e() {
-    this.ref = this.dialogService.open(NewGuest, {
-      header: "Novo Hóspede",
-      width: "30vw",
-      contentStyle: { overflow: "auto" },
-      breakpoints: {
-        "960px": "75vw",
-        "640px": "90vw",
-      },
-    });
-
-    this.ref.onClose.subscribe((data: any) => {
-      let summary_and_detail;
-      if (data) {
-        const buttonType = data?.buttonType;
-        summary_and_detail = buttonType
-          ? {
-              summary: "No Product Selected",
-              detail: `Pressed '${buttonType}' button`,
-            }
-          : { summary: "Product Selected", detail: data?.name };
-      } else {
-        summary_and_detail = {
-          summary: "No Product Selected",
-          detail: "Pressed Close button",
-        };
-      }
-    });
-  }
-
   getPageTitle(newReservationMode) {
     if (newReservationMode == true) {
       this.pageTitle = "Nova reserva";
     } else {
       this.pageTitle = "Detalhes da reserva";
     }
-  }
-
-  goToNewRoom() {
-    this.router.navigate(["/room"]);
   }
 
   getReservationLabelStatus(situation: string) {
@@ -206,5 +171,8 @@ export class ReservationDetailComponent {
       return "Bloqueado";
     }
   }
-  
+
+  goToNewRoom() {
+    this.router.navigate(["/room"]);
+  }
 }

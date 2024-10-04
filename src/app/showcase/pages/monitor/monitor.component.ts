@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { Meta, Title } from "@angular/platform-browser";
 import { Subscription } from "rxjs";
 import { AppConfigService } from "@service/appconfigservice";
+import { MenuItem } from "@layout/models/menuItem.model";
 
 @Component({
   templateUrl: "./monitor.component.html",
@@ -21,7 +22,7 @@ export class MonitorComponent {
   optionsServices: any;
 
   subscription: Subscription;
-  ocupationMonitorData: any;
+  ocupationMonitorData: Array<MenuItem>;
 
   constructor(
     private configService: AppConfigService,
@@ -29,10 +30,6 @@ export class MonitorComponent {
     private metaService: Meta
   ) {
     this.titleService.setTitle("Monitor - RoomWise");
-    this.metaService.updateTag({
-      name: "description",
-      content: "PrimeNG Angular UI Kit",
-    });
 
     this.ocupationMonitorData = [
       {
@@ -94,6 +91,8 @@ export class MonitorComponent {
     );
     const surfaceBorder = documentStyle.getPropertyValue("--surface-border");
 
+    //Ocupação
+
     this.data = {
       labels: ["January", "February", "March", "April", "May", "June", "July"],
       datasets: [
@@ -146,7 +145,7 @@ export class MonitorComponent {
       },
     };
 
-    //Segundo grafico
+    //Gráfico de reservas
 
     this.dataReservation = {
       labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -201,7 +200,7 @@ export class MonitorComponent {
       },
     };
 
-    ///produtos grafico
+    ///grafico produtos 
 
     this.dataProduct = {
       labels: ["Água", "Refrigerante", "cerveja"],
@@ -232,36 +231,42 @@ export class MonitorComponent {
         },
       },
     };
+
     ///// grafico servico
-    this.dataServices= {
-        labels: ["Passeios de cavalo", "Trilha de Quadriciclo", "Passeio de charrete"],
-        datasets: [
-          {
-            data: [300, 50, 100],
-            backgroundColor: [
-              documentStyle.getPropertyValue("--blue-500"),
-              documentStyle.getPropertyValue("--yellow-500"),
-              documentStyle.getPropertyValue("--green-500"),
-            ],
-            hoverBackgroundColor: [
-              documentStyle.getPropertyValue("--blue-400"),
-              documentStyle.getPropertyValue("--yellow-400"),
-              documentStyle.getPropertyValue("--green-400"),
-            ],
-          },
-        ],
-      };
-  
-      this.optionsServices = {
-        cutout: "60%",
-        plugins: {
-          legend: {
-            labels: {
-              color: textColor,
-            },
+    
+    this.dataServices = {
+      labels: [
+        "Passeios de cavalo",
+        "Trilha de Quadriciclo",
+        "Passeio de charrete",
+      ],
+      datasets: [
+        {
+          data: [300, 50, 100],
+          backgroundColor: [
+            documentStyle.getPropertyValue("--blue-500"),
+            documentStyle.getPropertyValue("--yellow-500"),
+            documentStyle.getPropertyValue("--green-500"),
+          ],
+          hoverBackgroundColor: [
+            documentStyle.getPropertyValue("--blue-400"),
+            documentStyle.getPropertyValue("--yellow-400"),
+            documentStyle.getPropertyValue("--green-400"),
+          ],
+        },
+      ],
+    };
+
+    this.optionsServices = {
+      cutout: "60%",
+      plugins: {
+        legend: {
+          labels: {
+            color: textColor,
           },
         },
-      };
+      },
+    };
   }
 
   get isDarkMode(): boolean {

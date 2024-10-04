@@ -8,6 +8,7 @@ import { Table } from "primeng/table";
 import { DialogService, DynamicDialogRef } from "primeng/dynamicdialog";
 import { NewGuest } from "@doc/dynamicdialog/new-guest";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Guest } from "@layout/models/guest.model";
 
 @Component({
   templateUrl: "./guest-edit.component.html",
@@ -22,23 +23,18 @@ export class GuestEditComponent {
   searchValue: string | undefined;
   date: string | Date;
   reservationHistoryList!: Array<any>;
-  guest: any;
+  guest: Guest;
   newGuestMode: boolean = true;
 
   constructor(
     private configService: AppConfigService,
     private titleService: Title,
-    private metaService: Meta,
     private customerService: CustomerService,
     public dialogService: DialogService,
     public route: ActivatedRoute,
     private router: Router
   ) {
     this.titleService.setTitle("RoomWise");
-    this.metaService.updateTag({
-      name: "description",
-      content: "PrimeNG Angular UI Kit",
-    });
 
     // - Pre reservado
     // - Reservado
@@ -137,14 +133,13 @@ export class GuestEditComponent {
       .then((customers) => (this.customers = customers));
   }
 
-  showDialog() {
-    this.visible = true;
-    console.log(this.customers);
-  }
-
   clear(table: Table) {
     table.clear();
     this.searchValue = "";
+  }
+
+  get isDarkMode(): boolean {
+    return this.configService.config().darkMode;
   }
 
   getSeverity(status: string) {
@@ -155,10 +150,6 @@ export class GuestEditComponent {
       case "inativo":
         return "danger";
     }
-  }
-
-  get isDarkMode(): boolean {
-    return this.configService.config().darkMode;
   }
 
   getSituationLabel(situation: string) {
@@ -192,5 +183,4 @@ export class GuestEditComponent {
   navigateToGuestList() {
     this.router.navigate(["/guest"]);
   }
-
 }

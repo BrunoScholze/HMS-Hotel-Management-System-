@@ -30,19 +30,10 @@ export class ReservationComponent {
   constructor(
     private configService: AppConfigService,
     private titleService: Title,
-    private metaService: Meta,
     public dialogService: DialogService,
     private router: Router
   ) {
     this.titleService.setTitle("RoomWise");
-
-    this.cities = [
-      { name: "New York", code: "NY" },
-      { name: "Rome", code: "RM" },
-      { name: "London", code: "LDN" },
-      { name: "Istanbul", code: "IST" },
-      { name: "Paris", code: "PRS" },
-    ];
 
     this.reservationList = [
       {

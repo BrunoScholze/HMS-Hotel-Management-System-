@@ -74,7 +74,6 @@ export class GuestComponent {
         number: "123",
         complement: "Apto 21",
         active: false,
-
       },
       {
         name: "Carlos Oliveira",
@@ -627,15 +626,13 @@ export class GuestComponent {
     return this.configService.config().darkMode;
   }
 
-  public navigateToGuestEdit(guest) {
+  navigateToGuestEdit(guest) {
     this.router.navigate(["/guestEdit", "detailGuest"], {
       queryParams: { guest: JSON.stringify(guest) },
     });
   }
 
-  public navigateToNewGuest() {
+  navigateToNewGuest() {
     this.router.navigate(["/guestEdit", "NewGuest"]);
-
-
   }
 }

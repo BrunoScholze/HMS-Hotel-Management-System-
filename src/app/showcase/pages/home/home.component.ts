@@ -25,7 +25,6 @@ export class HomeComponent {
     public dialogService: DialogService,
     private router: Router
   ) {
-
     this.titleService.setTitle("RoomWise");
 
     this.reservationList = [
@@ -238,7 +237,39 @@ export class HomeComponent {
     }
   }
 
-  show() {
+  getNextSituation(reservation) {
+    console.log(reservation);
+    if (
+      reservation.situation == "booked" ||
+      reservation.situation == "preBooked"
+    ) {
+      return (reservation.situation = "busy");
+    }
+
+    if (reservation.situation == "busy") {
+      return (reservation.situation = "inCleaning");
+    }
+
+    if (reservation.situation == "inCleaning") {
+      return (reservation.situation = "available");
+    }
+
+    if (reservation.situation == "available") {
+      return (reservation.situation = "booked");
+    }
+
+    if (reservation.situation == "blocked") {
+      return (reservation.situation = "available");
+    }
+  }
+
+  goToReservationDetail(reservation) {
+    this.router.navigate(["/reservationDetail", "detailReservation"], {
+      queryParams: { reservation: JSON.stringify(reservation) },
+    });
+  }
+
+  showDialog() {
     this.ref = this.dialogService.open(NewReservation, {
       header: "Nova reserva",
       width: "50vw",
@@ -266,37 +297,5 @@ export class HomeComponent {
         };
       }
     });
-  }
-
-  goToReservationDetail(reservation) {
-    this.router.navigate(["/reservationDetail", "detailReservation"], {
-      queryParams: { reservation: JSON.stringify(reservation) },
-    });
-  }
-
-  nextSituation(reservation) {
-    console.log(reservation);
-    if (
-      reservation.situation == "booked" ||
-      reservation.situation == "preBooked"
-    ) {
-      return (reservation.situation = "busy");
-    }
-
-    if (reservation.situation == "busy") {
-      return (reservation.situation = "inCleaning");
-    }
-
-    if (reservation.situation == "inCleaning") {
-      return (reservation.situation = "available");
-    }
-
-    if (reservation.situation == "available") {
-      return (reservation.situation = "booked");
-    }
-
-    if (reservation.situation == "blocked") {
-        return (reservation.situation = "available");
-      }
   }
 }
