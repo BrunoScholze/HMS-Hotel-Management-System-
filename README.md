@@ -9,11 +9,9 @@ Bem-vindo ao sistema de gestão de hotelaria! Este sistema foi desenvolvido para
 
 Aqui estão alguns prints das funcionalidades principais:
 
-![Screenshot 2024-10-15 at 00 22 38](https://github.com/user-attachments/assets/68e9dbd0-146b-41b4-bb41-437710df8b51)
-![Screenshot 2024-10-15 at 00 26 05](https://github.com/user-attachments/assets/4775bcfc-902d-43f0-9fdf-711c06deee3f)
-![Screenshot 2024-10-15 at 00 23 40](https://github.com/user-attachments/assets/4d28c6ee-6a08-4fcd-b038-8e8cab5b18be)
-![Screenshot 2024-10-15 at 00 23 49](https://github.com/user-attachments/assets/d4600909-b561-4e84-8d64-6b52fbd8be6e)
-![Screenshot 2024-10-15 at 00 27 28](https://github.com/user-attachments/assets/8ae8c0f7-0fce-466f-8d7a-2e5266b01cce)
-![Screenshot 2024-10-15 at 00 23 54](https://github.com/user-attachments/assets/015f2cd4-9362-407c-b172-9e9f585a2dd0)
-![Screenshot 2024-10-15 at 00 23 59](https://github.com/user-attachments/assets/f4aace8b-73a7-44eb-83ea-017cb2e098e1)
-<img width="1435" alt="Screenshot 2024-10-15 at 00 35 24" src="https://github.com/user-attachments/assets/1c8f2cea-859e-4d71-babb-f401a48df544">
+<img width="1435" alt="Screenshot 2024-10-15 at 00 38 52" src="https://github.com/user-attachments/assets/64a41b61-16f9-4bdc-a592-93b57a546ff7">
+<img width="1435" alt="Screenshot 2024-10-15 at 00 38 01" src="https://github.com/user-attachments/assets/c1d93c12-eb4f-477d-87ab-464b8c503591">
+<img width="1435" alt="Screenshot 2024-10-15 at 00 37 53" src="https://github.com/user-attachments/assets/722b9564-0428-4a16-8622-b3c0a6e6eb28">
+<img width="1435" alt="Screenshot 2024-10-15 at 00 37 49" src="https://github.com/user-attachments/assets/5cc81b63-8687-4be7-a70c-e816a030c5c2">
+<img width="1435" alt="Screenshot 2024-10-15 at 00 37 28" src="https://github.com/user-attachments/assets/3b78a98b-d39b-464c-9eea-7932fc59ec83">
+<img width="1435" alt="Screenshot 2024-10-15 at 00 37 24" src="https://github.com/user-attachments/assets/05ebc741-5e05-4c46-9b24-4e4727ce1b3c">
