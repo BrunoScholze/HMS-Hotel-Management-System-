@@ -16,3 +16,4 @@ Aqui estão alguns prints das funcionalidades principais:
 ![Screenshot 2024-10-15 at 00 27 28](https://github.com/user-attachments/assets/8ae8c0f7-0fce-466f-8d7a-2e5266b01cce)
 ![Screenshot 2024-10-15 at 00 23 54](https://github.com/user-attachments/assets/015f2cd4-9362-407c-b172-9e9f585a2dd0)
 ![Screenshot 2024-10-15 at 00 23 59](https://github.com/user-attachments/assets/f4aace8b-73a7-44eb-83ea-017cb2e098e1)
+<img width="1435" alt="Screenshot 2024-10-15 at 00 35 24" src="https://github.com/user-attachments/assets/1c8f2cea-859e-4d71-babb-f401a48df544">
