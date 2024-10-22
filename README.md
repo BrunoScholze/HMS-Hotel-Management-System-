@@ -5,7 +5,7 @@
 
 Bem-vindo ao sistema de gestão de hotelaria! Este sistema foi desenvolvido para facilitar a gestão de reservas, hóspedes e quartos, proporcionando uma interface amigável e intuitiva.
 
-🔧 Boas Práticas de Desenvolvimento<br>
+**🔧 Boas Práticas de Desenvolvimento<br>**
 
 -Lazy Loading<br>
 -Componentização<br>
@@ -16,7 +16,7 @@ Bem-vindo ao sistema de gestão de hotelaria! Este sistema foi desenvolvido para
 -Formulários Reativos<br>
 -CSS Responsivo<br>
 
-🗓️ Uso do Kendo Grid
+**🗓️ Uso do Kendo Grid** <br>
 O sistema integra o Kendo Grid para a gestão da agenda de reservas de forma visual e intuitiva.
 
 ## 📸 Prints da Aplicação
