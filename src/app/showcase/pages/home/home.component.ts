@@ -132,7 +132,7 @@ export class HomeComponent {
         dailyRate: 200,
         carPlate: "ABC-1234",
       },
-      {
+      /*{
         uh: "Quarto 9",
         guest: "Fernando Reis",
         checkIn: "06/09/2024",
@@ -183,7 +183,7 @@ export class HomeComponent {
         children: 1,
         dailyRate: 200,
         carPlate: "ABC-1234",
-      },
+      },*/
     ];
   }
 
@@ -238,7 +238,7 @@ export class HomeComponent {
   }
 
   getNextSituation(reservation) {
-    console.log(reservation);
+
     if (
       reservation.situation == "booked" ||
       reservation.situation == "preBooked"
@@ -280,21 +280,9 @@ export class HomeComponent {
       },
     });
 
-    this.ref.onClose.subscribe((data: any) => {
-      let summary_and_detail;
-      if (data) {
-        const buttonType = data?.buttonType;
-        summary_and_detail = buttonType
-          ? {
-              summary: "No Product Selected",
-              detail: `Pressed '${buttonType}' button`,
-            }
-          : { summary: "Product Selected", detail: data?.name };
-      } else {
-        summary_and_detail = {
-          summary: "No Product Selected",
-          detail: "Pressed Close button",
-        };
+    this.ref.onClose.subscribe((reservationData: any) => {
+      if (reservationData) {
+        this.reservationList.push(reservationData);
       }
     });
   }

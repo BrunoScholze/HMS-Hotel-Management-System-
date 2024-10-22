@@ -32,6 +32,7 @@ import { NewGuest } from './new-guest';
 import { NewCategory } from './new-category';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
     imports: [CommonModule, 
@@ -58,6 +59,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
               InputSwitchModule,
               SplitButtonModule,
               InputTextModule,
+              DropdownModule,
               InputTextareaModule,
               InputNumberModule],
 

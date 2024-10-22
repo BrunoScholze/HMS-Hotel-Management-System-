@@ -1,10 +1,10 @@
 import {
   DomRendererFactory2
-} from "./chunk-X7QDYIFZ.js";
-import "./chunk-ORYITMUH.js";
+} from "./chunk-Z6H6ZYAO.js";
+import "./chunk-PHMIHE3R.js";
 import {
   DOCUMENT
-} from "./chunk-7QG7KTVP.js";
+} from "./chunk-PRJSCXL4.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionScheduler,
@@ -18,13 +18,13 @@ import {
   setClassMetadata,
   ɵɵdefineInjectable,
   ɵɵinvalidFactory
-} from "./chunk-NYVEHWU4.js";
-import "./chunk-WSA2QMXP.js";
-import "./chunk-J4B6MK7R.js";
+} from "./chunk-OZC4QVZV.js";
+import "./chunk-RV45G22J.js";
+import "./chunk-B2KS57BG.js";
 
 // node_modules/@angular/platform-browser/fesm2022/animations/async.mjs
 var ANIMATION_PREFIX = "@";
-var _AsyncAnimationRendererFactory = class _AsyncAnimationRendererFactory {
+var AsyncAnimationRendererFactory = class _AsyncAnimationRendererFactory {
   /**
    *
    * @param moduleImpl allows to provide a mock implmentation (or will load the animation module)
@@ -48,7 +48,7 @@ var _AsyncAnimationRendererFactory = class _AsyncAnimationRendererFactory {
    * @internal
    */
   loadImpl() {
-    const moduleImpl = this.moduleImpl ?? import("./browser-ZIDJW26F.js").then((m) => m);
+    const moduleImpl = this.moduleImpl ?? import("./browser-XYQW6DDF.js").then((m) => m);
     return moduleImpl.catch((e) => {
       throw new RuntimeError(5300, (typeof ngDevMode === "undefined" || ngDevMode) && "Async loading for animations package was enabled, but loading failed. Angular falls back to using regular rendering. No animations will be displayed and their styles won't be applied.");
     }).then(({
@@ -102,15 +102,18 @@ var _AsyncAnimationRendererFactory = class _AsyncAnimationRendererFactory {
   whenRenderingDone() {
     return this.delegate.whenRenderingDone?.() ?? Promise.resolve();
   }
+  static {
+    this.ɵfac = function AsyncAnimationRendererFactory_Factory(t) {
+      ɵɵinvalidFactory();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _AsyncAnimationRendererFactory,
+      factory: _AsyncAnimationRendererFactory.ɵfac
+    });
+  }
 };
-_AsyncAnimationRendererFactory.ɵfac = function AsyncAnimationRendererFactory_Factory(t) {
-  ɵɵinvalidFactory();
-};
-_AsyncAnimationRendererFactory.ɵprov = ɵɵdefineInjectable({
-  token: _AsyncAnimationRendererFactory,
-  factory: _AsyncAnimationRendererFactory.ɵfac
-});
-var AsyncAnimationRendererFactory = _AsyncAnimationRendererFactory;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AsyncAnimationRendererFactory, [{
     type: Injectable

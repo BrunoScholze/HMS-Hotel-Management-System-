@@ -1,7 +1,7 @@
 import {
   __spreadProps,
   __spreadValues
-} from "./chunk-J4B6MK7R.js";
+} from "./chunk-B2KS57BG.js";
 
 // node_modules/@stackblitz/sdk/bundles/sdk.m.js
 var CONNECT_INTERVAL = 500;

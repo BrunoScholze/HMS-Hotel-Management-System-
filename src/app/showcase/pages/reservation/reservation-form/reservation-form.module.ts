@@ -18,6 +18,8 @@ import { ColorPickerModule } from 'primeng/colorpicker';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 @NgModule({
     imports: [CommonModule, 
@@ -38,8 +40,9 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
               InputTextModule, 
               CascadeSelectModule,
               SplitButtonModule,
+              ConfirmDialogModule,
               TableModule],
 
-    declarations: [ReservationFormComponent]
+    declarations: [ReservationFormComponent],
 })
 export class ReservationDetailModule {}

@@ -2,10 +2,8 @@ import { Component } from "@angular/core";
 import { Meta, Title } from "@angular/platform-browser";
 import { Subscription } from "rxjs";
 import { AppConfigService } from "@service/appconfigservice";
-import { NewReservation } from "@doc/dynamicdialog/new-reservation";
 import { DialogService, DynamicDialogRef } from "primeng/dynamicdialog";
-import { NewGuest } from "@doc/dynamicdialog/new-guest";
-import { MenuItem } from "primeng/api";
+import { ConfirmationService, MenuItem, MessageService } from "primeng/api";
 import { Router } from "@angular/router";
 import { ActivatedRoute } from "@angular/router";
 import { Reservation } from "@layout/models/reservation.model";
@@ -17,7 +15,7 @@ interface City {
 
 @Component({
   templateUrl: "./reservation-form.component.html",
-  providers: [DialogService],
+  providers: [DialogService, ConfirmationService, MessageService],
   styleUrls: ["reservation-form.component.scss"],
 })
 export class ReservationFormComponent {
@@ -42,6 +40,8 @@ export class ReservationFormComponent {
     private metaService: Meta,
     public dialogService: DialogService,
     public route: ActivatedRoute,
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService,
     private router: Router
   ) {
     this.titleService.setTitle("RoomWise");
@@ -166,4 +166,10 @@ export class ReservationFormComponent {
   goToNewRoom() {
     this.router.navigate(["/room"]);
   }
+
+  onClickSaveNewReservation(event: Event) {
+    //Service para back
+    this.router.navigate(["/reservation"]);
+  }
+  
 }

@@ -1,4 +1,4 @@
-import "./chunk-J4B6MK7R.js";
+import "./chunk-B2KS57BG.js";
 
 // node_modules/@docsearch/js/dist/esm/index.js
 function e(e2, t2) {

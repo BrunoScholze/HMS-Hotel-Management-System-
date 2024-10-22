@@ -332,4 +332,18 @@ export class ReservationComponent {
   goToNewReservationDetail() {
     this.router.navigate(["/reservationDetail", "newReservation"]);
   }
+
+  getBoxStatusColor(situation){
+    if (situation == "preBooked" || situation == "booked") {
+      return "blue-background";
+    } else if (situation == "busy") {
+      return "red-background";
+    } else if (situation == "inCleaning") {
+      return "light-blue-background";
+    } else if (situation == "available") {
+      return "green-background";
+    } else if (situation == "blocked") {
+      return "grey-background";
+    }
+  }
 }
