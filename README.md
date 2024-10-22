@@ -5,7 +5,8 @@
 
 Bem-vindo ao sistema de gestão de hotelaria! Este sistema foi desenvolvido para facilitar a gestão de reservas, hóspedes e quartos, proporcionando uma interface amigável e intuitiva.
 
-🔧 Boas Práticas de Desenvolvimento
+🔧 Boas Práticas de Desenvolvimento<br>
+
 Lazy Loading
 Componentização
 Separação de Concerns
