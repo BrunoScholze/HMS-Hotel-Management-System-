@@ -7,14 +7,14 @@ Bem-vindo ao sistema de gestão de hotelaria! Este sistema foi desenvolvido para
 
 🔧 Boas Práticas de Desenvolvimento<br>
 
-Lazy Loading
-Componentização
-Separação de Concerns
-Uso do RxJS
-NgModules
-Injeção de Dependências
-Formulários Reativos
-CSS Responsivo
+-Lazy Loading<br>
+-Componentização<br>
+-Separação de Concerns<br>
+-Uso do RxJS<br>
+-NgModules<br>
+-Injeção de Dependências<br>
+-Formulários Reativos<br>
+-CSS Responsivo<br>
 
 🗓️ Uso do Kendo Grid
 O sistema integra o Kendo Grid para a gestão da agenda de reservas de forma visual e intuitiva.
